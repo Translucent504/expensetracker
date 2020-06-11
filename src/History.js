@@ -1,6 +1,6 @@
 import { GlobalContext } from './context/GlobalState';
-
 import React, { useContext } from 'react'
+import Transaction from './Transaction'
 
 const History = () => {
     const context = useContext(GlobalContext)
@@ -8,8 +8,8 @@ const History = () => {
     return (
         <>
           <h2>History</h2>
-            <ul>
-                {context.transactions.map(({id, name, amount}) => (<li key={id}>{name} {(amount<0?"-$":"+$") + Math.abs(amount)}</li>))}
+            <ul className="list">
+                {context.transactions.map(({id, name, amount}) =><Transaction key = {id} id={id} name={name} amount={amount}/>)}
             </ul>  
         </>
     )

@@ -23,6 +23,13 @@ export const GlobalProvider = ({ children }) => {
 
     // Actions
 
+    function delTransaction(id){
+        dispatch({
+            type:"DELETE_TRANSACTION",
+            payload: id
+        })
+    ;}
+
     function newTransaction(name, amount) {
         const max_id = state.transactions.reduce((acc,{id})=>id>acc?id:acc, 0)
         dispatch({
@@ -36,7 +43,8 @@ export const GlobalProvider = ({ children }) => {
 
     return (<GlobalContext.Provider value={{
         transactions: state.transactions,
-        newTransaction
+        newTransaction,
+        delTransaction
     }}>
         {children}
     </GlobalContext.Provider>)

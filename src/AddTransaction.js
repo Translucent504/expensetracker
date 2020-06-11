@@ -10,7 +10,7 @@ const AddTransaction = () => {
         if(tname)
         newTransaction(tname, amount)
         e.target[0].value = ''
-        e.target[1].value = 0
+        e.target[1].value = ''
     }
     return (
         <>
@@ -18,7 +18,7 @@ const AddTransaction = () => {
             <form onSubmit={submitTrans}>
             <input required type="text" placeholder="Transaction Name" onChange={(e)=>setName(e.target.value)}/>
             <input required type="number" placeholder="0" onChange={(e)=>setAmount(parseFloat(e.target.value))}/>
-            <input type="submit"  value="Submit"/>
+            <input className="btn" type="submit"  value="Submit"/>
             </form>
         </>
     )

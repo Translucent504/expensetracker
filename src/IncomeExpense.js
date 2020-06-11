@@ -6,8 +6,9 @@ const IncomeExpense = () => {
     const income = context.transactions.reduce((acc, {amount})=> amount>=0?acc + amount : acc, 0)
     const expense = context.transactions.reduce((acc, {amount})=> amount<0?acc + amount : acc, 0)
     return (
-        <div>
-            <span> Income: {income} Expense: {expense}</span>
+        <div className="inc-exp-container">
+            <span> Income: {income}</span>
+            <span> Expense: {expense}</span>
         </div>
     )
 }
