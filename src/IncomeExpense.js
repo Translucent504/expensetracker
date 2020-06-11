@@ -7,8 +7,8 @@ const IncomeExpense = () => {
     const expense = context.transactions.reduce((acc, {amount})=> amount<0?acc + amount : acc, 0)
     return (
         <div className="inc-exp-container">
-            <span> Income: {income}</span>
-            <span> Expense: {expense}</span>
+            <span className="income"> Income:<br/> {income.toFixed(2)}</span>
+            <span className="expense"> Expense:<br/> {expense.toFixed(2)}</span>
         </div>
     )
 }

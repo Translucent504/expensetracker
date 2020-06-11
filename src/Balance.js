@@ -5,10 +5,9 @@ const Balance = () => {
     const context = useContext(GlobalContext)
     const balance = context.transactions.reduce((cum, {amount})=>cum+amount, 0)
     return (
-        <>
-            <h2>Your Balance</h2>
-            <span>{balance}</span>
-        </>
+            <h2>
+                Your Balance: <span className={balance>0?"plus":"minus"}>${balance.toFixed(2)}</span>
+            </h2>
     )
 }
 
